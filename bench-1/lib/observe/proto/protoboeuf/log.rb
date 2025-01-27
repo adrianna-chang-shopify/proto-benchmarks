@@ -2304,7 +2304,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @message
@@ -2317,7 +2317,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         list = @warnings
@@ -2333,7 +2333,7 @@ module Observe
                 buff << byte
               end
 
-              buff.append_as_bytes(val)
+              buff << (val.ascii_only? ? val : val.b)
             end
           end
         end
@@ -2348,7 +2348,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @root_span_id
@@ -2361,7 +2361,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @code_filepath
@@ -2374,7 +2374,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @code_lineno
@@ -2405,7 +2405,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @exception_message
@@ -2418,7 +2418,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @exception_stacktrace
@@ -2431,7 +2431,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         map = @attributes
@@ -2449,7 +2449,7 @@ module Observe
                 buff << byte
               end
 
-              buff.append_as_bytes(val)
+              buff << (val.ascii_only? ? val : val.b)
             end
 
             val = value
@@ -2529,7 +2529,7 @@ module Observe
                 buff << byte
               end
 
-              buff.append_as_bytes(val)
+              buff << (val.ascii_only? ? val : val.b)
             end
 
             val = value
@@ -4068,7 +4068,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @int_value
@@ -4309,7 +4309,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
         buff << @_unknown_fields if @_unknown_fields
         buff
@@ -4729,7 +4729,7 @@ module Observe
                 buff << byte
               end
 
-              buff.append_as_bytes(val)
+              buff << (val.ascii_only? ? val : val.b)
             end
           end
         end

@@ -1648,7 +1648,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @message
@@ -1661,7 +1661,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @trace_id
@@ -1674,7 +1674,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @root_span_id
@@ -1687,7 +1687,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @code_filepath
@@ -1700,7 +1700,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @code_lineno
@@ -3031,7 +3031,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @entrypoint
@@ -3044,7 +3044,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @api_client_id
@@ -3075,7 +3075,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
         buff << @_unknown_fields if @_unknown_fields
         buff
@@ -5617,7 +5617,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @k8s_pod_name
@@ -5630,7 +5630,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @k8s_pod_ip
@@ -5643,7 +5643,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @k8s_node_name
@@ -5656,7 +5656,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @k8s_node_ip
@@ -5669,7 +5669,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @k8s_namespace_name
@@ -5682,7 +5682,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @cloud_region
@@ -5695,7 +5695,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @cloud_provider
@@ -5708,7 +5708,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @cloud_account_id
@@ -5721,7 +5721,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @deployment_worker_type
@@ -5734,7 +5734,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @process_command
@@ -5747,7 +5747,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @process_runtime_name
@@ -5760,7 +5760,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @process_runtime_version
@@ -5773,7 +5773,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @process_runtime_description
@@ -5786,7 +5786,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @service_version
@@ -5799,7 +5799,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @service_name
@@ -5813,7 +5813,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
 
         val = @rails_version
@@ -5827,7 +5827,7 @@ module Observe
             buff << byte
           end
 
-          buff.append_as_bytes(val)
+          buff << (val.ascii_only? ? val : val.b)
         end
         buff << @_unknown_fields if @_unknown_fields
         buff

@@ -752,7 +752,7 @@ module Observe
               buff << byte
             end
 
-            buff.append_as_bytes(val)
+            buff << (val.ascii_only? ? val : val.b)
           end
 
           val = @scope_name
@@ -765,7 +765,7 @@ module Observe
               buff << byte
             end
 
-            buff.append_as_bytes(val)
+            buff << (val.ascii_only? ? val : val.b)
           end
 
           list = @fulfillment_order_ids

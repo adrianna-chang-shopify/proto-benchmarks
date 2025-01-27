@@ -233,7 +233,6 @@ def any(value, proto_impl: :google_protobuf)
   if proto_impl == :google_protobuf
     Google::Protobuf::Any.pack(value, "types.shopify.io/observe.proto.FulfillmentOrderAcquiringLock")
   else
-    require 'debug'; debugger
     ProtoBoeuf::Google::Protobuf::Any.new(
       value: Observe::Proto::Protoboeuf::FulfillmentOrderAcquiringLock.encode(value),
       type_url: "types.shopify.io/observe.proto.protoboeuf.FulfillmentOrderAcquiringLock",
