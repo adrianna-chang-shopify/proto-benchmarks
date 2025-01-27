@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package observe.proto.protoboeuf;
+
+message FulfillmentOrderAcquiringLock {
+  string log_context = 1;
+  string scope_name = 2;
+  repeated int64 fulfillment_order_ids = 3;
+}

@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package observe.proto;
+
+message Log {
+  uint64 time_unix_nano = 1;
+  string name = 2;
+  string message = 3;
+  repeated string warnings = 4;
+  string trace_id = 5;
+  string root_span_id = 6;
+  string code_filepath = 7;
+  int32 code_lineno = 8;
+  string exception_type = 9;
+  string exception_message = 10;
+  string exception_stacktrace = 11;
+  map<string, Value> attributes = 12;
+  map<string, Value> resource = 13;
+}
+
+message Value {
+  oneof value {
+    string string_value = 1;
+    int64 int_value = 2;
+    double double_value = 3;
+    bool bool_value = 4;
+    StringArrayValue string_array_value = 5;
+    IntArrayValue int_array_value = 6;
+    DoubleArrayValue double_array_value = 7;
+    BoolArrayValue bool_array_value = 8;
+    string json_value = 9;
+  }
+}
+
+message StringArrayValue {
+  repeated string values = 1;
+}
+
+message IntArrayValue {
+  repeated int64 values = 1;
+}
+
+message DoubleArrayValue {
+  repeated double values = 1;
+}
+
+message BoolArrayValue {
+  repeated bool values = 1;
+}

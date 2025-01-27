@@ -1,0 +1,49 @@
+
+Ô
+
+envelope.protoobserve.protogoogle/protobuf/any.proto"ô
+Envelope$
+time_unix_nano (RtimeUnixNano
+name (	Rname
+message (	Rmessage
+trace_id (	RtraceId 
+root_span_id (	R
+rootSpanId#
+code_filepath (	RcodeFilepath
+code_lineno (R
+codeLineno3
+resource (2.observe.proto.ResourceRresource0
+context	 (2.observe.proto.ContextRcontext*
+value
+ (2.google.protobuf.AnyRvalue"Á
+Context
+shop_id (RshopId
+pod_id (RpodId
+
+request_id (	R	requestId
+
+entrypoint (	R
+entrypoint"
+api_client_id (RapiClientId#
+database_name (	RdatabaseName"Ô
+Resource(
+k8s_cluster_name (	Rk8sClusterName 
+k8s_pod_name (	R
+k8sPodName
+
+k8s_pod_ip (	Rk8sPodIp"
+k8s_node_name (	Rk8sNodeName
+k8s_node_ip (	R	k8sNodeIp,
+k8s_namespace_name (	Rk8sNamespaceName!
+cloud_region (	RcloudRegion%
+cloud_provider (	RcloudProvider(
+cloud_account_id	 (	RcloudAccountId4
+deployment_worker_type
+ (	RdeploymentWorkerType'
+process_command (	RprocessCommand0
+process_runtime_name (	RprocessRuntimeName6
+process_runtime_version (	RprocessRuntimeVersion>
+process_runtime_description (	RprocessRuntimeDescription'
+service_version (	RserviceVersion!
+service_name (	RserviceName#
+rails_version (	RrailsVersionbproto3

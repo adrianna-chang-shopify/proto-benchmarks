@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package observe.proto;
+
+import "google/protobuf/any.proto";
+
+message Envelope {
+  uint64 time_unix_nano = 1;
+  string name = 2;
+  string message = 3;
+  string trace_id = 4;
+  string root_span_id = 5;
+  string code_filepath = 6;
+  int32 code_lineno = 7;
+  Resource resource = 8;
+  Context context = 9;
+  google.protobuf.Any value = 10;
+}
+
+message Context {
+  int64 shop_id = 1;
+  int32 pod_id = 2;
+  string request_id = 3;
+  string entrypoint = 4;
+  int64 api_client_id = 5;
+  string database_name = 6;
+}
+
+message Resource {
+  string k8s_cluster_name = 1;
+  string k8s_pod_name = 2;
+  string k8s_pod_ip = 3;
+  string k8s_node_name = 4;
+  string k8s_node_ip = 5;
+  string k8s_namespace_name = 6;
+  string cloud_region = 7;
+  string cloud_provider = 8;
+  string cloud_account_id = 9;
+  string deployment_worker_type = 10;
+  string process_command = 11;
+  string process_runtime_name = 12;
+  string process_runtime_version = 13;
+  string process_runtime_description = 14;
+  string service_version = 15;
+  string service_name = 16;
+  string rails_version = 17;
+}

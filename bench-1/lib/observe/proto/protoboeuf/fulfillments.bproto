@@ -1,0 +1,9 @@
+
+Á
+fulfillments.protoobserve.proto"“
+FulfillmentOrderAcquiringLock
+log_context (	R
+logContext
+
+scope_name (	R	scopeName2
+fulfillment_order_ids (RfulfillmentOrderIdsbproto3
