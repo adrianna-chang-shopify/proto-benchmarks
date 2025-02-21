@@ -24,14 +24,12 @@ options = {
 optparse = OptionParser.new do |opts|
   opts.on("--n-runs [N]", "number of runs") do |n|
     options[:n_runs] = n.to_i
-    puts options[:n_runs]
   end
   opts.on("--skip-samply-run", "skip running samply") do
     options[:samply_run] = false
   end
-  opts.on("--skip-perf-run", "skip perf run") do
-    options[:perf_run] = false
-    options[:samply_run] = false
+  opts.on("--skip_perf_run", "skip running perf") do
+    options[:skip_perf_run] = false
   end
   opts.on("--samply-output [OUTPUT]", "output file for samply") do |output|
     options[:samply_output] = output
@@ -56,19 +54,13 @@ optparse = OptionParser.new do |opts|
   opts.on("--generate", "run generate benchmarks") do
     options[:generate] = true
   end
-  opts.on("--perf", "use perf") do
+  opts.on("--perf", "use perf for benchmarking") do
     options[:perf_run] = true
-    options[:samply_run] = false
   end
 end
-
-old_argv = ARGV.dup
-
 optparse.parse!
 
-if options[:google_protobuf] && options[:protoboeuf]
-  exit 1
-end
+exit 1 if options[:google_protobuf] && options[:protoboeuf]
 
 if options[:samply_run]
   samply_output = options[:samply_output]
@@ -85,22 +77,20 @@ if options[:samply_run]
     "--yjit",
     "--yjit-perf",
     __FILE__,
-    *old_argv,
     "--skip-samply-run",
+    *ARGV,
   )
 elsif options[:perf_run]
   exec(
     "perf",
     "record",
-    "-e",
-    "cycles,instructions,cache-misses",
+    "bundle",
+    "exec",
     "ruby",
-    "--yjit",
-    "--yjit-perf",
     __FILE__,
-    *old_argv,
-    "--skip-perf-run",
-  )
+    *ARGV,
+    "--skip-perf_run",
+  ) 
 end
 
 lib = File.expand_path("lib", __dir__)
@@ -510,7 +500,6 @@ elsif options[:vernier]
     end
   end
 elsif options[:google_protobuf] || options[:protoboeuf]
-  puts "!!!!! hi"
   log_data = gen_log_data_proto
   n_runs.times { encode_as_envelope_proto(log_data) }
 end
